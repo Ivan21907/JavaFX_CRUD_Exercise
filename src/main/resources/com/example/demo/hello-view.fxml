@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: Aqua;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label text="Exercici CRUD Ivan Porras" textFill="RED">
+        <font>
+            <Font size="36.0" />
+        </font>
+    </Label>
+    <Button fx:id="boto_alumnes" mnemonicParsing="false" onAction="#escenaAlumne" style="-fx-background-color: Blue;" text="Gestionar Alumnes" textAlignment="RIGHT" textFill="WHITE" />
+    <Button fx:id="boto_moduls" mnemonicParsing="false" onAction="#escenaModul" style="-fx-background-color: Red;" text="Gestionar Moduls" textFill="#fff9f9" />
+    <Button fx:id="boto_professors" onAction="#escenaProfessor" style="-fx-background-color: Green;" text="Gestionar Professors" textFill="#fffefe" />
+   <Button fx:id="sortir" mnemonicParsing="false" onAction="#sortir" style="-fx-background-color: black;" text="Sortir" textFill="WHITE" />
+</VBox>

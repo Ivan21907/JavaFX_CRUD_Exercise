@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="520.0" prefWidth="501.0" style="-fx-background-color: Green;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controller.ProfessorController">
+    <children>
+        <Label alignment="CENTER" layoutY="-1.0" prefHeight="60.0" prefWidth="501.0" style="-fx-background-color: Green;" text="Gestió de Professors" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Label>
+        <Label layoutX="46.0" layoutY="82.0" prefHeight="38.0" prefWidth="101.0" text="Id" textFill="WHITE" />
+        <Label layoutX="46.0" layoutY="130.0" prefHeight="38.0" prefWidth="101.0" text="Nom" textFill="WHITE" />
+        <Label layoutX="46.0" layoutY="173.0" prefHeight="38.0" prefWidth="101.0" text="Cognoms" textFill="WHITE" />
+        <TextField fx:id="id" layoutX="194.0" layoutY="82.0" prefHeight="38.0" prefWidth="149.0" />
+        <TextField fx:id="nom" layoutX="194.0" layoutY="130.0" prefHeight="38.0" prefWidth="149.0" />
+        <TextField fx:id="cognoms" layoutX="194.0" layoutY="174.0" prefHeight="38.0" prefWidth="149.0" />
+        <Button fx:id="boto_afegir" layoutX="358.0" layoutY="278.0" mnemonicParsing="false" onAction="#afegir" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: Blue;" text="Afegir" textFill="#fffdfd" />
+        <Label fx:id="lavel" layoutX="54.0" layoutY="278.0" prefHeight="38.0" prefWidth="235.0" textFill="WHITE" />
+        <Button fx:id="boto_eliminar" layoutX="128.0" layoutY="334.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: orange;" text="Eliminar Professor">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+        <TextField fx:id="text_id" layoutX="6.0" layoutY="334.0" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: gray;" text="Inserir id per eliminar">
+         <font>
+            <Font size="10.0" />
+         </font></TextField>
+        <Button fx:id="boto_llistar" layoutX="269.0" layoutY="334.0" mnemonicParsing="false" onAction="#llistar" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: yellow;" text="Mostrar Professors">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+        <TableView fx:id="table" layoutY="373.0" prefHeight="155.0" prefWidth="501.0">
+            <columns>
+                <TableColumn fx:id="table_id" prefWidth="75.0" text="Id" />
+                <TableColumn fx:id="table_nom" prefWidth="105.0" text="Nom" />
+                <TableColumn fx:id="table_cognoms" prefWidth="92.0" text="Cognoms" />
+            </columns>
+        </TableView>
+        <Button fx:id="boto_modificar" layoutX="386.0" layoutY="334.0" mnemonicParsing="false" onAction="#modificar" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: Red;" text="Modificar Professors" textFill="#fffdfd">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button fx:id="enrrere" layoutX="20.0" layoutY="17.0" mnemonicParsing="false" onAction="#tornar" style="-fx-background-color: black;" text="&lt;-" textFill="WHITE" />
+    </children>
+</AnchorPane>

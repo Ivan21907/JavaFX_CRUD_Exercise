@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="520.0" prefWidth="501.0" style="-fx-background-color: Blue;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controller.AlumneController">
+    <children>
+        <Label alignment="CENTER" layoutY="-1.0" prefHeight="60.0" prefWidth="501.0" style="-fx-background-color: Blue;" text="Gestió d'Alumnes" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Label>
+        <Label layoutX="46.0" layoutY="59.0" prefHeight="26.0" prefWidth="84.0" text="Id" textFill="WHITE" />
+        <Label layoutX="46.0" layoutY="96.0" prefHeight="26.0" prefWidth="84.0" text="Nom" textFill="WHITE" />
+        <Label layoutX="46.0" layoutY="140.0" prefHeight="26.0" prefWidth="84.0" text="Cognoms" textFill="WHITE" />
+        <TextField fx:id="idAlumne" layoutX="194.0" layoutY="59.0" prefHeight="26.0" prefWidth="134.0" />
+        <TextField fx:id="NomAlumne" layoutX="194.0" layoutY="96.0" prefHeight="26.0" prefWidth="134.0" />
+        <TextField fx:id="CognomsAlumne" layoutX="194.0" layoutY="140.0" prefHeight="26.0" prefWidth="134.0" />
+        <Button fx:id="boto_afegir" layoutX="371.0" layoutY="297.0" mnemonicParsing="false" onAction="#afegir" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: Red;" text="Afegir" textFill="WHITE" />
+        <Label fx:id="lavel" layoutX="25.0" layoutY="316.0" prefHeight="26.0" prefWidth="144.0" textFill="WHITE">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <Button fx:id="boto_eliminar" layoutX="128.0" layoutY="346.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: orange;" text="Eliminar Alumne">
+            <font>
+                <Font size="10.0" />
+            </font></Button>
+        <TextField fx:id="text_id" layoutX="7.0" layoutY="346.0" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: gray;" text="Inserir id per eliminar">
+            <font>
+                <Font size="10.0" />
+            </font></TextField>
+        <Button fx:id="boto_llistar" layoutX="269.0" layoutY="346.0" mnemonicParsing="false" onAction="#llistar" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: yellow;" text="Mostrar Alumnes">
+            <font>
+                <Font size="10.0" />
+            </font></Button>
+        <TableView fx:id="table" layoutY="373.0" prefHeight="155.0" prefWidth="501.0">
+            <columns>
+                <TableColumn fx:id="table_id_alumne" prefWidth="60.0" text="id_Alumne" />
+                <TableColumn fx:id="table_nom_alumne" prefWidth="82.0" text="Nom_Alumne" />
+                <TableColumn fx:id="table_cognom_alumne" prefWidth="82.0" text="Cognom_Alumne" />
+                <TableColumn fx:id="table_data_alumne" prefWidth="90.0" text="Data_Naix" />
+            <TableColumn fx:id="table_curs_alumne" prefWidth="90.0" text="Curs" />
+            <TableColumn fx:id="table_projenitors_alumne" prefWidth="90.0" text="Projenitors" />
+            </columns>
+        </TableView>
+        <Button fx:id="boto_modificar" layoutX="385.0" layoutY="346.0" mnemonicParsing="false" onAction="#modificar" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: green;" text="Modificar Alumnes" textFill="WHITE">
+            <font>
+                <Font size="10.0" />
+            </font></Button>
+      <Label layoutX="46.0" layoutY="176.0" prefHeight="26.0" prefWidth="84.0" text="Data Naixement" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <DatePicker fx:id="NaixementAlumne" layoutX="194.0" layoutY="177.0" />
+      <Label layoutX="46.0" layoutY="214.0" prefHeight="26.0" prefWidth="84.0" text="Curs" textFill="WHITE" />
+      <TextField fx:id="CursAlumne" layoutX="194.0" layoutY="214.0" prefHeight="26.0" prefWidth="134.0" />
+      <Label layoutX="46.0" layoutY="251.0" prefHeight="26.0" prefWidth="84.0" text="Nom Projenitor 1" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ProjenitorAlumne1" layoutX="194.0" layoutY="251.0" prefHeight="26.0" prefWidth="134.0" />
+      <Label layoutX="46.0" layoutY="283.0" prefHeight="26.0" prefWidth="84.0" text="Nom Projenitor 2" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ProjenitorAlumne2" layoutX="193.0" layoutY="283.0" prefHeight="26.0" prefWidth="134.0" />
+      <Button fx:id="enrrere" layoutX="32.0" layoutY="17.0" mnemonicParsing="false" onAction="#tornar" style="-fx-background-color: Black;" text="&lt;-" textFill="WHITE" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,20 @@
+CREATE TYPE curs AS ENUM ('ESO', 'Batxillerat', 'Cicles_Formatius');
+
+CREATE TABLE alumnes(ID SERIAL PRIMARY KEY,
+               	NOM VARCHAR(40),
+                COGNOMS VARCHAR(30),
+                DATANAIXEMENT DATE,
+                CURS curs,
+                NomProgenitor VARCHAR(50)[]);
+
+INSERT INTO public.alumnes(
+	nom, cognoms, datanaixement, curs, nomprogenitor)
+	VALUES ('Ivan', 'Porras Cáceres', '2001-08-21', 'Cicles_Formatius', array['Isabel', 'Juan José']);
+	
+INSERT INTO public.alumnes(
+	nom, cognoms, datanaixement, curs, nomprogenitor)
+	VALUES ('David', 'Lozano Balaguer', '1972-02-22', 'ESO', array['hola', 'Test']);
+	
+INSERT INTO public.alumnes(
+	nom, cognoms, datanaixement, curs, nomprogenitor)
+	VALUES ('alumne3', 'crack pro', '1900-01-01', 'Batxillerat', array['alumne3Mare', 'alumne3Pare']);

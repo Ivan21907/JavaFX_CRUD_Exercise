@@ -10,12 +10,17 @@ import java.sql.*;
 public class ModulDAOInterficie implements ModulDAO
 {
 
+    //obtenim la connexió a la base de dades
     Connection conn = null;
 
     public ModulDAOInterficie() throws SQLException {
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dam2", "root", "ivan2001");;
     }
 
+    /**
+     * Funcio que afegirà un modul a la base de dades
+     * @param mp modul que s'afegirà a la base de dades
+     */
     @Override
     public void afegir(ModulProfessional mp)
     {
@@ -42,6 +47,11 @@ public class ModulDAOInterficie implements ModulDAO
 
     }
 
+    /**
+     * Funcio que esborrarà un modul de la base de dades
+     * @param mp modul que s'esborrarà de la base de dades
+     * @throws SQLException
+     */
     @Override
     public void eliminar(ModulProfessional mp) throws SQLException
     {
@@ -65,6 +75,11 @@ public class ModulDAOInterficie implements ModulDAO
         }
     }
 
+    /**
+     * Funcio que actualitzarà un modul de la base de dades
+     * @param mp modul que s'actualitzarà de la base de dades
+     * @throws SQLException
+     */
     @Override
     public void modificar(ModulProfessional mp) throws SQLException {
         try
@@ -89,6 +104,11 @@ public class ModulDAOInterficie implements ModulDAO
         }
     }
 
+    /**
+     * Funcio que retornarà tots els mòduls de la base de dades
+     * @param list llista on es guardaran els mòduls
+     * @throws SQLException
+     */
     @Override
     public void llistar(ObservableList<ModulProfessional> list) throws SQLException {
 
@@ -101,7 +121,6 @@ public class ModulDAOInterficie implements ModulDAO
 
             while (rs.next())
             {
-                //list.add(new ModulProfessional(rs.getInt("idmòdul_professional"), rs.getString("nom"), rs.getString("nom"), rs.getString("cognom")));
                 list.add(new ModulProfessional(rs.getInt("idmòdul_professional"), rs.getString("nom"), rs.getString("nomProfessor"), rs.getString("cognomProfessor")));
             }
         }

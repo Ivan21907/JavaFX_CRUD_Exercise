@@ -34,7 +34,7 @@ public class Professor
         this.id = id;
     }
 
-    //Getters & Setters
+    //getters i setters de la classe
     public int getId() {
         return id;
     }

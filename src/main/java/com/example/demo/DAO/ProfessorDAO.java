@@ -11,6 +11,8 @@ import java.sql.*;
 
 public interface ProfessorDAO
 {
+    //Funcions que s'han de implementar a la classe AlumneDAOInterficie
+
     void afegir(Professor p);
     void eliminar(Professor p) throws SQLException;
     void modificar(Professor p) throws SQLException;

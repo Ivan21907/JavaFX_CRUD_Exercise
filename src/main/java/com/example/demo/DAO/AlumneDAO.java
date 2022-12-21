@@ -10,6 +10,8 @@ import java.sql.SQLException;
 
 public interface AlumneDAO
 {
+    //Funcions que s'han de implementar a la classe AlumneDAOInterficie
+
     void afegir(Alumne alumne) throws SQLException;
     void eliminar(Alumne alumne) throws SQLException;
     void modificar(Alumne alumne) throws SQLException;

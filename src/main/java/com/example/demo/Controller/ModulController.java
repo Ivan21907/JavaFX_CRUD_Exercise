@@ -24,9 +24,10 @@ import java.sql.*;
 
 public class ModulController
 {
-
+    //objecte que s'utilitzarà per accedir a les funcions que s'han implementat a la classe ModulDAO
     private static ModulDAO modulDAO;
 
+    //diguem que l'objecte ModulDAO és igual a l'objecte ModulDAOInterficie amb el codi de les funcions implementades
     static {
         try {
             modulDAO = new ModulDAOInterficie();
@@ -35,6 +36,7 @@ public class ModulController
         }
     }
 
+    //elements xml que s'utilitzaran per l'interfície
     @FXML
     private TextField idModul;
     @FXML
@@ -53,6 +55,7 @@ public class ModulController
     @FXML
     private Label lavel;
 
+    //elements de la taula per mostrar les dades de les Bases de dades a la interfície
     @FXML
     private TableView<ModulProfessional> table;
 
@@ -65,6 +68,9 @@ public class ModulController
     @FXML
     private TableColumn<ModulProfessional, String> table_cognom_professor;
 
+    /**
+     * Funció que s'executa quan li cliquem al boto d'afegir moduls
+     */
     public void afegir()
     {
         ModulProfessional mp = new ModulProfessional();
@@ -78,6 +84,9 @@ public class ModulController
         }
     }
 
+    /**
+     * Funció que s'executa quan li cliquem al boto d'eliminar moduls
+     */
     public void eliminar()
     {
         ModulProfessional mp = new ModulProfessional();
@@ -90,6 +99,9 @@ public class ModulController
         }
     }
 
+    /**
+     * Funció que s'executa quan li cliquem al boto d'actualitzar moduls
+     */
     public void modificar()
     {
         ModulProfessional mp = new ModulProfessional();
@@ -105,10 +117,13 @@ public class ModulController
     }
 
 
-
+    //elements de la taula per mostrar les dades de les Bases de dades a la interfície
     ObservableList<ModulProfessional> listM = FXCollections.observableArrayList();
 
 
+    /**
+     * Funció que s'executa quan li cliquem al boto de mostrar moduls
+     */
     @FXML
     public void llistar()
     {
@@ -129,6 +144,11 @@ public class ModulController
 
     }
 
+    /**
+     * Funcio que s'executa quan li cliquem al boto d'enrere
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tornar(ActionEvent event) throws IOException
     {

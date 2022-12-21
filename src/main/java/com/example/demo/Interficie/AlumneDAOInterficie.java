@@ -17,19 +17,18 @@ import java.sql.*;
 
 public class AlumneDAOInterficie implements AlumneDAO
 {
-
-    @FXML
-    private Stage stage;
-    @FXML
-    private Scene scene;
-    @FXML
-    private Parent root;
+    //obtenim la connexió a la base de dades
     Connection conn = null;
 
     public AlumneDAOInterficie() throws SQLException {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Connexio", "postgres", "ivan2001");
     }
 
+    /**
+     * Funcio que afegirà un alumne a la base de dades
+     * @param alumne alumne que s'afegirà a la base de dades
+     * @throws SQLException
+     */
     @Override
     public void afegir(Alumne alumne) throws SQLException
     {
@@ -52,6 +51,11 @@ public class AlumneDAOInterficie implements AlumneDAO
 
     }
 
+    /**
+     * Funcio que esborrarà un alumne de la base de dades
+     * @param alumne alumne que s'esborrarà de la base de dades
+     * @throws SQLException
+     */
     @Override
     public void eliminar(Alumne alumne) throws SQLException
     {
@@ -69,6 +73,11 @@ public class AlumneDAOInterficie implements AlumneDAO
 
     }
 
+    /**
+     * Funcio que modificarà un alumne de la base de dades
+     * @param alumne alumne que s'actualitzarà a la base de dades
+     * @throws SQLException
+     */
     @Override
     public void modificar(Alumne alumne) throws SQLException
     {
@@ -91,6 +100,11 @@ public class AlumneDAOInterficie implements AlumneDAO
 
     }
 
+    /**
+     * Funcio que retornarà tots els alumnes de la base de dades
+     * @param list llista on es guardaran els alumnes
+     * @throws SQLException
+     */
     @Override
     public void llistar(ObservableList<Alumne> list) throws SQLException
     {

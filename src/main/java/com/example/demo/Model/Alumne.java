@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
+//Cursos que pot fer un alumne
 enum curs
 {
     ESO, Batxillerat, Cicles_Formatius;
@@ -65,6 +66,8 @@ public class Alumne
 
 
     }
+
+    //getters i setters de la classe
 
     public int getId() {
         return id;

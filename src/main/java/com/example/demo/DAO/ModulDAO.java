@@ -8,6 +8,8 @@ import java.sql.SQLException;
 
 public interface ModulDAO
 {
+    //Funcions que s'han de implementar a la classe AlumneDAOInterficie
+
     void afegir(ModulProfessional mp);
     void eliminar(ModulProfessional mp) throws SQLException;
     void modificar(ModulProfessional mp) throws SQLException;

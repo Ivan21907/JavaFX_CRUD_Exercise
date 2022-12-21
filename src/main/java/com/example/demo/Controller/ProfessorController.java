@@ -22,8 +22,10 @@ import java.sql.*;
 public class ProfessorController
 {
 
+    //objecte que s'utilitzarà per accedir a les funcions que s'han implementat a la classe ProfessorDAO
     private static ProfessorDAO professorDAO;
 
+    //diguem que l'objecte ProfessorDAO és igual a l'objecte ProfessorDAOInterficie amb el codi de les funcions implementades
     static {
         try {
             professorDAO = new ProfessorDAOInterficie();
@@ -32,6 +34,7 @@ public class ProfessorController
         }
     }
 
+    //elements xml que s'utilitzaran per l'interfície
     @FXML
     private TextField id;
     @FXML
@@ -44,6 +47,7 @@ public class ProfessorController
     @FXML
     private Label lavel;
 
+    //elements de la taula per mostrar les dades de les Bases de dades a la interfície
     @FXML
     private TableView<Professor> table;
 
@@ -54,7 +58,10 @@ public class ProfessorController
     @FXML
     private TableColumn<Professor, String> table_cognoms;
 
-
+    /**
+     * Funcio que s'executa que li cliquem al boto de afegir professors
+     * @param ae
+     */
     @FXML
     public void afegir(ActionEvent ae){
 
@@ -71,6 +78,10 @@ public class ProfessorController
         }
     }
 
+    /**
+     * Funcio que s'executa que li cliquem al boto de eliminar professors
+     * @param ae
+     */
     @FXML
     public void eliminar(ActionEvent ae)
     {
@@ -85,8 +96,12 @@ public class ProfessorController
         }
     }
 
+    //elements de la taula per mostrar les dades de les Bases de dades a la interfície
     ObservableList<Professor> listM = FXCollections.observableArrayList();
 
+    /**
+     * Funcio que s'executa que li cliquem al boto de mostrar professors
+     */
     @FXML
     public void llistar()
     {
@@ -110,6 +125,10 @@ public class ProfessorController
 
     }
 
+    /**
+     * Funcio que s'executa que li cliquem al boto de modificar professors
+     * @param ae
+     */
     @FXML
     public void modificar(ActionEvent ae)
     {
@@ -126,6 +145,11 @@ public class ProfessorController
         }
     }
 
+    /**
+     * Funcio que s'executa que li cliquem al boto de tornar enrere
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tornar(ActionEvent event) throws IOException
     {

@@ -19,9 +19,12 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 
-public class AlumneController {
+public class AlumneController
+{
+    //objecte que s'utilitzarà per accedir a les funcions que s'han implementat a la classe AlumneDAO
     private static AlumneDAO alumneDAO;
 
+    //diguem que l'objecte alumneDAO és igual a l'objecte AlumneDAOInterficie amb el codi de les funcions implementades
     static {
         try {
             alumneDAO = new AlumneDAOInterficie();
@@ -30,6 +33,7 @@ public class AlumneController {
         }
     }
 
+    //elements xml que s'utilitzaran per l'interfície
     @FXML
     private Stage stage;
     @FXML
@@ -56,6 +60,7 @@ public class AlumneController {
     @FXML
     private Label lavel;
 
+    //elements de la taula per mostrar les dades de les Bases de dades a la interfície
     @FXML
     private TableView<Alumne> table;
 
@@ -73,19 +78,19 @@ public class AlumneController {
     private TableColumn<Alumne, String[]> table_projenitors_alumne;
 
 
-    public void start(Stage stage) throws Exception {
-        Scene scene = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        stage.setScene(scene);
-        stage.show();
-    }
-
+    /**
+     * Funcio que s'executa quan li cliquem al boto d'afegir alumnes
+     */
     public void afegir()
     {
         try {
 
+            //instancia d'objecte alumne
             Alumne alumne = new Alumne();
+            //guardem els projenitors en una array
             String[] projenitors = new String[]{ProjenitorAlumne1.getText(), ProjenitorAlumne2.getText()};
 
+            //obtenim els valors dels camps de text i els guardem a l'objecte alumne
             alumne.setNom(NomAlumne.getText());
             alumne.setCognoms(CognomsAlumne.getText());
             alumne.setData_naixement(Date.valueOf(NaixementAlumne.getValue()));
@@ -102,13 +107,16 @@ public class AlumneController {
         }
     }
 
+    /**
+     * Funcio que s'executa quan li cliquem al boto d'eliminar alumnes
+     */
     public void eliminar()
     {
         try
         {
-
             Alumne alumne = new Alumne();
 
+            //per eliminar un alumne necessitem el seu id
             alumne.setId(Integer.parseInt(idAlumne.getText()));
 
             alumneDAO.eliminar(alumne);
@@ -121,6 +129,9 @@ public class AlumneController {
         }
     }
 
+    /**
+     * Funcio que s'executa quan li cliquem al boto d'actualitzar alumnes
+     */
     public void modificar()
     {
         try
@@ -146,21 +157,28 @@ public class AlumneController {
         }
     }
 
+    //llista observable que s'utilitzarà per mostrar les dades de la taula
     ObservableList<Alumne> listM = FXCollections.observableArrayList();
 
+    /**
+     * Funcio que s'executa quan li cliquem al boto de mostrar alumnes
+     */
     public void llistar()
     {
         try
         {
+            //cada vegada que se cliqui al boto de llistar es netejarà la llista
             listM.clear();
+            //posem les dades de la BDD al valor de la taula que li correspongui
             table_id_alumne.setCellValueFactory(new PropertyValueFactory<Alumne, Integer>("id"));
             table_nom_alumne.setCellValueFactory(new PropertyValueFactory<Alumne, String>("nom"));
             table_cognom_alumne.setCellValueFactory(new PropertyValueFactory<Alumne, String>("cognoms"));
             table_data_alumne.setCellValueFactory(new PropertyValueFactory<Alumne, DatePicker>("data_naixement"));
             table_curs_alumne.setCellValueFactory(new PropertyValueFactory<Alumne, String>("curs"));
             table_projenitors_alumne.setCellValueFactory(new PropertyValueFactory<Alumne, String[]>("nom_Projenitors"));
-
+            //mostrem la llista
             alumneDAO.llistar(listM);
+            //posem la llista a la taula
             table.setItems(listM);
 
         } catch (SQLException e)
@@ -170,6 +188,11 @@ public class AlumneController {
         }
     }
 
+    /**
+     * Funcio que s'executa quan li cliquem al boto de tirar enrrere
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tornar(ActionEvent event) throws IOException
     {

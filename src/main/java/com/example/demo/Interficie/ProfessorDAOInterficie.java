@@ -12,12 +12,18 @@ import java.sql.*;
 public class ProfessorDAOInterficie implements ProfessorDAO
 {
 
+    //obtenim la connexió a la base de dades
     Connection conn = null;
 
     public ProfessorDAOInterficie() throws SQLException {
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dam2", "root", "ivan2001");;
     }
-    //@Override
+
+    /**
+     * Funcio que afegirà un professor a la base de dades
+     * @param p professor que s'afegirà a la base de dades
+     */
+    @Override
     public void afegir(Professor p)
     {
         try
@@ -42,6 +48,11 @@ public class ProfessorDAOInterficie implements ProfessorDAO
 
     }
 
+    /**
+     * Funcio que esborrarà un professor de la base de dades
+     * @param list llista de professors que s'esborrarà de la base de dades
+     * @throws SQLException
+     */
     @Override
     public void llistar(ObservableList<Professor> list) throws SQLException {
 
@@ -66,6 +77,7 @@ public class ProfessorDAOInterficie implements ProfessorDAO
 
     /**
      * Funcio que elimina un professor de la base de dades
+     * @param p professor que s'esborrarà de la base de dades
      * @throws SQLException
      */
 
@@ -90,6 +102,7 @@ public class ProfessorDAOInterficie implements ProfessorDAO
 
     /**
      * Funcio que modifica un professor de la base de dades a partir del seu id
+     * @param p professor que s'actualitzarà a la base de dades
      * @throws SQLException
      */
 

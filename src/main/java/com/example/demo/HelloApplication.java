@@ -16,6 +16,11 @@ public class HelloApplication extends Application
         launch();
     }
 
+    /**
+     * Mètode que s'executa quan s'obre l'aplicació
+     * @param stage stage principal de l'aplicació
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception
     {

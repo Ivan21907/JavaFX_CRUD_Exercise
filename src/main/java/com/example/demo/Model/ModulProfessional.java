@@ -50,6 +50,7 @@ public class ModulProfessional
 
     }
 
+    //getters i setters de la classe
 
     public int getIdModul() {
         return idModul;
